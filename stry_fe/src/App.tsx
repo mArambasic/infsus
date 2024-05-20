@@ -6,7 +6,6 @@ import Register from './Pages/Register';
 import Login from './Pages/Login'
 import Home from './Pages/Home'
 import { UserProvider } from "./Helper/UserProvider";
-import RegisterK from './Pages/RegisterK';
 import Profile from './Pages/Profile';
 import Verify from './Pages/Verify';
 import SuggestLocationPage from './Pages/SuggestLocationPage';
@@ -36,7 +35,6 @@ function App() {
               <Route path="/Profile" element={<Profile/>}></Route>
               <Route path="/InfoProfile" element={<InfoProfile/>}></Route>
               <Route path="/Register" element={<Register/>}></Route>
-              <Route path="/RegisterK" element={<RegisterK/>}></Route>
               <Route path="/SuggestLocationPage" element={<SuggestLocationPage/>}></Route>
               <Route path="/verify" element={<Verify/>}></Route>
               <Route path="/playersForDuel" element={<PlayersForDuel/>}></Route>
