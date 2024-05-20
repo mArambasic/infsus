@@ -215,10 +215,10 @@ export default function Map() {
     console.log("Cards saved");
   };
 
-  const cardDetails = (name: string) => {
-    navigate("/cardDetails");
-    window.sessionStorage.setItem("CardName", name);
-    console.log("Cards details");
+  const storyDetails = (storyId: string) => {
+    navigate("/storyDetails");
+    window.sessionStorage.setItem("StoryId", storyId);
+    console.log("Story details");
   };
 
   const changeImagesHandler = (e: any, id: number) => {
@@ -480,7 +480,7 @@ export default function Map() {
                   <h3>{item.name}</h3>
                   {item.description && <em>{item.description}</em>}
                   <br />
-                  <button onClick={(e) => cardDetails(item.name)}>
+                  <button onClick={(e) => storyDetails(item.name)}>
                     More details
                   </button>
                   <button onClick={(e) => handlePickUpCards(e, index)}>

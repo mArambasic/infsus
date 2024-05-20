@@ -28,9 +28,9 @@ export default function SeePlayerProfile(){
         username : window.sessionStorage.getItem("fighterUsername")
     }
 
-    const handleClickOnDetails = (name:string)=> {
-        window.sessionStorage.setItem("CardName", name);
-        navigate("/CardDetails");
+    const handleClickOnDetails = (storyId:string)=> {
+        window.sessionStorage.setItem("StoryId", storyId);
+        navigate("/StoryDetails");
     }
 
     useEffect(()=>{

@@ -14,7 +14,7 @@ import LocationRequests from './Pages/CartographerPages/LocationRequests';
 import AddLocation from './Pages/CartographerPages/AddLocation';
 import PlayersForDuel from './Pages/PlayersForDuel';
 import Stories from './Pages/Stories';
-import CardDetails from './Pages/CardDetails';
+import StoryDetails from './Pages/StoryDetails';
 import PageForRouting from './Pages/CartographerPages/PageForRouting';
 import SeePlayerProfile from './Pages/SeePlayerProfile';
 import EditPlayers from './Pages/AdminPages/EditPlayers';
@@ -39,7 +39,7 @@ function App() {
               <Route path="/verify" element={<Verify/>}></Route>
               <Route path="/playersForDuel" element={<PlayersForDuel/>}></Route>
               <Route path="/stories" element={<Stories/>}></Route>
-              <Route path="/cardDetails" element={<CardDetails/>}></Route>
+              <Route path="/storyDetails" element={<StoryDetails/>}></Route>
               <Route path="/SeePlayerProfile" element={<SeePlayerProfile/>}></Route>
               <Route path="/SettingCardsPage" element={<SettingCardsPage/>}></Route>
               

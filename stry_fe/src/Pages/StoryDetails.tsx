@@ -9,7 +9,7 @@ const Image: React.FC<{ src: string }> = ({ src }) => {
 };
 
 
-export default function CardDetails(){
+export default function StoryDetails(){
 
     let cards;
 

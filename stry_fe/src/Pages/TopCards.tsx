@@ -25,7 +25,7 @@ export default function TopCards() {
 const handleCardClicked = (name : string)=>
 {
     window.sessionStorage.setItem("CardName", name);
-    navigate("/CardDetails");
+    navigate("/StoryDetails");
 }  
 
 const handleGetCards = (
