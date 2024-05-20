@@ -6,32 +6,47 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Table(name = "Story")
 public class Story {
     @Id
     @NonNull
+    @Column(name = "Id")
+    private Long id;
+
+    @NonNull
     @Column(name = "Title")
     private String title;
     @NonNull
     @Column(name = "Score")
-    private String score;
+    private Float score;
     @NonNull
-    @Column(name = "Date", unique = true)
-    private String date;
+    @Column(name = "Date")
+    private Date date;
     @NonNull
-    @Column(name = "Author", unique = true)
+    @Column(name = "Author")
     private String author;
 
     public Story() {
     }
 
-    public Story(@NonNull String title, @NonNull String score, @NonNull String date, @NonNull String author) {
+    public Story(@NonNull Long id, @NonNull String title, @NonNull Float score, @NonNull Date date, @NonNull String author) {
+        this.id = id;
         this.title = title;
         this.score = score;
         this.date = date;
         this.author = author;
+    }
+
+    @NonNull
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(@NonNull Long id) {
+        this.id = id;
     }
 
     @NonNull
@@ -44,20 +59,20 @@ public class Story {
     }
 
     @NonNull
-    public String getScore() {
+    public Float getScore() {
         return score;
     }
 
-    public void setScore(@NonNull String score) {
+    public void setScore(@NonNull Float score) {
         this.score = score;
     }
 
     @NonNull
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(@NonNull String date) {
+    public void setDate(@NonNull Date date) {
         this.date = date;
     }
 
