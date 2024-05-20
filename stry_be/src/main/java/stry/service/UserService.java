@@ -67,7 +67,6 @@ public class UserService implements IUserService {
                 findByEmail(user.getEmail()).size() == 0) {
 
             String randomCode = RandomString.make(64);
-            user.setEnabled(false);
 
             userRepository.save(user);
             return user;
@@ -81,7 +80,7 @@ public class UserService implements IUserService {
         if(!k.isEmpty()) {
             String passwordKorisnik = k.get().getPassword();
 
-            if(passwordKorisnik.contentEquals(password) && k.get().isEnabled()) {
+            if(passwordKorisnik.contentEquals(password)) {
                 return "success";
             }
         }

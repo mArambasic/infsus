@@ -47,36 +47,19 @@ public class UserController {
         try {
             if (user.getUsername() == null ||
                     user.getPassword() == null ||
-                    user.getEmail() == null) {
+                    user.getEmail() == null ||
+                    user.getFirstName() == null ||
+                    user.getLastName() == null
+            ) {
                 throw new NotEnoughParametersException("no no");
             }
 
             User newUser = new User(user.getUsername(),
                     user.getPassword(),
-                    user.getEmail());
-            var res = userService.addNewUser(newUser, siteURL);
-            if (res == null) {
-                throw new UserAlreadyExistsException("no-no");
-            }
-        } catch (Exception e) {
-            throw new UserAlreadyExistsException("no-no");
-        }
-    }
-
-    @PostMapping("api/v1/addNewCartographer")
-    public void addNewCartographer(@RequestBody User user, HttpServletRequest request) {
-        String siteURL = getSiteUrl(request);
-
-        try {
-            if (user.getUsername() == null ||
-                    user.getPassword() == null ||
-                    user.getEmail() == null) {
-                throw new NotEnoughParametersException("no no");
-            }
-
-            User newUser = new User(user.getUsername(),
-                    user.getPassword(),
-                    user.getEmail());
+                    user.getEmail(),
+                    user.getFirstName(),
+                    user.getLastName(),
+                    user.getRole());
             var res = userService.addNewUser(newUser, siteURL);
             if (res == null) {
                 throw new UserAlreadyExistsException("no-no");

@@ -25,9 +25,4 @@ public class StatsController {
     public List<Pair<String, Integer>> ranking() {
         return statsService.getGlobalRanking();
     }
-
-    @PostMapping("/api/v1/postPlayersLastBattles")
-    public PlayersLastBattlesPOJO postPlayersLastBattles(@RequestBody User user) throws IOException {
-        return statsService.postPlayersLastBattles(user.getUsername());
-    }
 }

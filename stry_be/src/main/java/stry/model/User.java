@@ -28,47 +28,70 @@ public class User {
     private String lastName; // lastName
     @Column(name = "role")
     private String role; // uloga - player, cartographer ili admin
-    @Column(name = "enabled")
-    private boolean enabled = false;
 
     public User() {
     }
 
-    // konstruktor za user
-    public User(String username, String password, String email) {
+
+    public User(@NonNull String username, @NonNull String password, @NonNull String email, @NonNull String firstName, @NonNull String lastName, String role) {
         this.username = username;
         this.password = password;
         this.email = email;
-        this.role = "Player";
-        this.enabled = false;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.role = role;
     }
 
+    @NonNull
     public String getUsername() {
         return username;
     }
 
+    public void setUsername(@NonNull String username) {
+        this.username = username;
+    }
+
+    @NonNull
     public String getPassword() {
         return password;
     }
 
+    public void setPassword(@NonNull String password) {
+        this.password = password;
+    }
+
+    @NonNull
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(@NonNull String email) {
+        this.email = email;
+    }
+
+    @NonNull
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(@NonNull String firstName) {
+        this.firstName = firstName;
+    }
+
+    @NonNull
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(@NonNull String lastName) {
+        this.lastName = lastName;
     }
 
     public String getRole() {
         return role;
     }
 
-    public boolean isEnabled() {
-        return enabled;
+    public void setRole(String role) {
+        this.role = role;
     }
-
-    public void setEnabled(boolean b) {
-        this.enabled = b;
-    }
-
-    public void setPassword(String password){
-        this.password = password;
-    }
-
 }
