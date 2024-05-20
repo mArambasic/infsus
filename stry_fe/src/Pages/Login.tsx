@@ -10,8 +10,8 @@ export default function Login() {
 
   const { login } = useContext(UserContext);
   const [data, setData] = useState({
-    username: "Jadranka",
-    password: "123456789",
+    username: "",
+    password: "",
   });
 
 //==========================================================================================FUNKCIJE==============================================================================
@@ -34,7 +34,7 @@ export default function Login() {
         if (res.status == 200) {
           login(userData.username, userData.password);
           console.log("Podaci", res.data);
-          window.sessionStorage.setItem("loggedIn", JSON.stringify(true));//stringify dodaje navodnike xD
+          window.sessionStorage.setItem("loggedIn", JSON.stringify(true));
           window.sessionStorage.setItem("Username", userData.username);
           window.sessionStorage.setItem("Password", userData.password);
           window.sessionStorage.setItem("Role", res.data);
@@ -60,7 +60,7 @@ export default function Login() {
             onChange={(e) => handleChange(e)}
             name="username"
             value={data.username}
-            placeholder="Upiši username"
+            placeholder="Username"
           />
         </div>
         <div>
@@ -70,7 +70,7 @@ export default function Login() {
             onChange={(e) => handleChange(e)}
             name="password"
             value={data.password}
-            placeholder="Upiši password"
+            placeholder="Password"
           />
         </div>
         <div>
@@ -80,13 +80,8 @@ export default function Login() {
           <span className="registerText">Don't have an account? </span> <br />
           <Link className="registerText" to="/Register">
             {" "}
-            Register as Player!{" "}
+            Register!{" "}
           </Link>{" "}
-          <br />
-          <Link className="registerText" to="/RegisterK">
-            {" "}
-            Register as Cartographer!{" "}
-          </Link>
         </div>
       </form>
     </div>

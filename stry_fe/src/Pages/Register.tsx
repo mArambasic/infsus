@@ -179,21 +179,6 @@ export default function Register(props: any) {
             </span>
           ) : null}
         </div>
-
-        <div className="formRow">
-          <label htmlFor="terms">
-            {" "}
-            Pročitao/la sam i prihvaćam uvjete korištenja{" "}
-          </label>
-          <input
-            type="checkbox"
-            id="terms"
-            name="terms"
-            required
-            checked={terms}
-            onChange={handleCheckButton}
-          />
-        </div>
         <div>
           <input type="submit" name="submit" disabled={submitDisabled} />
         </div>
@@ -205,10 +190,6 @@ export default function Register(props: any) {
         <div>
           <p className="registerText">
             Already have an account? <Link to="/Login">Login!</Link>
-          </p>
-          <p className="registerText">
-            Want to register as Cartographer?{" "}
-            <Link to="/RegisterK">Click Here!</Link>
           </p>
         </div>
       </div>
