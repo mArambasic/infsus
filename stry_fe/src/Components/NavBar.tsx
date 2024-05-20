@@ -35,7 +35,7 @@ export default function NavBar() {
 
         <div className="navbar-center">
           <div className="navbar-items-center" onClick={()=>navigate("/Home")}>
-              <img src="/LogoSTRY.png" alt="Logo" style={{height:"7vh", float:"left"}}></img>
+              <img src="/LogoSTRY.jpg" alt="Logo" style={{height:"7vh", float:"left"}}></img>
               <span style={{fontSize:"1.4em"}}>
                 STRY
               </span>
