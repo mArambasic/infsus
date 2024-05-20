@@ -5,7 +5,7 @@ import NavBar from "../Components/NavBar";
 import { UserContext } from "../Helper/Context";
 import Login from "./Login";
 
-export default function Inventory() {
+export default function Stories() {
 
   let userName1 = window.sessionStorage.getItem("Username");
 
@@ -70,10 +70,10 @@ export default function Inventory() {
     <>
       <div>
         <NavBar />
-        <h1>Inventory</h1>
-        <div className="inventory">
+        <h1>Stories</h1>
+        <div className="stories">
           {userCards.map((item) => (
-            <div className="inventory-component" onClick={(e)=>handleClickOnDetails(item.name)}>
+            <div className="stories-component" onClick={(e)=>handleClickOnDetails(item.name)}>
               <div style={{ height: "80%" }}><img src="/karte.png" style={{backgroundColor:"blue"}}/*{item.photo}*/ alt="" width={100}/></div>{" "}
               <div>{item.uses}</div>
               <div style={{ height: "20%", marginBottom: "50px"}}>{item.name} | {item.strenght} </div>

@@ -29,7 +29,7 @@ export default function NavBar() {
 
         <div className="navbar-left">
           <div className="navbar-items-left" >
-              <button onClick={()=>navigate("/stories")} style={{padding:"1rem",border:"0", borderRadius:"25%",fontWeight:"800", backgroundColor:"lightcyan", cursor:"pointer"}}>Inventory</button>
+              <button onClick={()=>navigate("/stories")} style={{padding:"1rem",border:"0", borderRadius:"25%",fontWeight:"800", backgroundColor:"lightcyan", cursor:"pointer"}}>Stories</button>
           </div>
         </div>
 

@@ -169,7 +169,7 @@ export default function SettingCardsPage() {
         <h2>Odabrane karte</h2>
         <div style={{border : "solid, 3px, black", display:"flex"}}>
         {choosenCards.map((item, index) => (
-            <div className="inventory-component" onClick={(e)=>removeChoosen(index)}>
+            <div className="stories-component" onClick={(e)=>removeChoosen(index)}>
               <div style={{ height: "80%"}}><img src="/karte.png"/*{item.photo}*/ alt="" width={100}/></div>{" "}
               <div>{item.uses}</div>
               <div style={{ height: "20%", marginBottom: "50px"}}>{item.name} | {item.strenght} </div>
@@ -180,10 +180,10 @@ export default function SettingCardsPage() {
             }
         </div>
 
-        <h1>Inventory</h1>
-        <div className="inventory">
+        <h1>Stories</h1>
+        <div className="stories">
           {userCards.map((item, index) => (
-            <div className="inventory-component" onClick={(e)=>cardChoosen(item.name, index)}>
+            <div className="stories-component" onClick={(e)=>cardChoosen(item.name, index)}>
               <div style={{ height: "80%" }}><img src="/karte.png"/*{item.photo}*/ alt="" width={100}/></div>{" "}
               <div>{item.uses}</div>
               <div style={{ height: "20%", marginBottom: "50px"}}>{item.name} | {item.strenght} </div>

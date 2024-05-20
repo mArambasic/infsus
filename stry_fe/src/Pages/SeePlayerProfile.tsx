@@ -76,7 +76,7 @@ export default function SeePlayerProfile(){
                     }}>
                         {player?.listOfPlayerCards.map(item=>(
 
-                            <div key={z++} style={{margin : "1rem"}} className="inventory-component" onClick={(e)=>handleClickOnDetails(item.name)}>
+                            <div key={z++} style={{margin : "1rem"}} className="stories-component" onClick={(e)=>handleClickOnDetails(item.name)}>
                                 <div style={{ height: "80%" }}><img src={item.photo} alt="" width={100}/></div>{" "}
                                 <div style={{ height: "20%", marginBottom: "50px"}}>{item.name} </div>
                             </div>

@@ -13,7 +13,7 @@ import CartographersRequest from './Pages/AdminPages/CartographersRequest';
 import LocationRequests from './Pages/CartographerPages/LocationRequests';
 import AddLocation from './Pages/CartographerPages/AddLocation';
 import PlayersForDuel from './Pages/PlayersForDuel';
-import Inventory from './Pages/Inventory';
+import Stories from './Pages/Stories';
 import CardDetails from './Pages/CardDetails';
 import PageForRouting from './Pages/CartographerPages/PageForRouting';
 import SeePlayerProfile from './Pages/SeePlayerProfile';
@@ -38,7 +38,7 @@ function App() {
               <Route path="/SuggestLocationPage" element={<SuggestLocationPage/>}></Route>
               <Route path="/verify" element={<Verify/>}></Route>
               <Route path="/playersForDuel" element={<PlayersForDuel/>}></Route>
-              <Route path="/inventory" element={<Inventory/>}></Route>
+              <Route path="/story" element={<Stories/>}></Route>
               <Route path="/cardDetails" element={<CardDetails/>}></Route>
               <Route path="/SeePlayerProfile" element={<SeePlayerProfile/>}></Route>
               <Route path="/SettingCardsPage" element={<SettingCardsPage/>}></Route>

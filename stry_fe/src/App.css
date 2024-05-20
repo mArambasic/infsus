@@ -278,14 +278,14 @@ form {
   border:solid;
 }
 
-.inventory{
+.stories{
   
   display: grid;
   grid-template-columns: repeat(5, 2fr);
   gap: 10px;
   padding:1rem;
 }
-.inventory-component{
+.stories-component{
   box-shadow: 5px 5px darkcyan;
   cursor: pointer;
   border:solid blue;
