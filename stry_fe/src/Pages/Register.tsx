@@ -149,7 +149,7 @@ export default function Register(props: any) {
 
 
         <div className="formRow">
-          <label htmlFor="Password">Password</label>
+          <label htmlFor="Password">Password: </label>
           <input
             className="input-data"
             onChange={handleChange}
@@ -161,7 +161,7 @@ export default function Register(props: any) {
         </div>
 
         <div className="formRow">
-          <label htmlFor="PasswordCheck">Confirm password</label>
+          <label htmlFor="PasswordCheck">Confirm password: </label>
           <input
             className="input-data"
             onChange={handleChange}

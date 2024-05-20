@@ -13,27 +13,34 @@ public class User {
     @Id
     @NonNull
     @Column(name = "username")
-    private String username; // korisnicko ime
+    private String username;
     @NonNull
     @Column(name = "password")
-    private String password; // lozinka
+    private String password;
     @NonNull
     @Column(name = "email", unique = true)
-    private String email; // email
+    private String email;
     @NonNull
     @Column(name = "firstName", unique = true)
-    private String firstName; // firstName
+    private String firstName;
     @NonNull
     @Column(name = "lastName", unique = true)
-    private String lastName; // lastName
+    private String lastName;
     @Column(name = "role")
-    private String role; // uloga - player, cartographer ili admin
+    private String role;
 
     public User() {
     }
 
 
-    public User(@NonNull String username, @NonNull String password, @NonNull String email, @NonNull String firstName, @NonNull String lastName, String role) {
+    public User(
+            @NonNull String username,
+            @NonNull String password,
+            @NonNull String email,
+            @NonNull String firstName,
+            @NonNull String lastName,
+            String role
+    ) {
         this.username = username;
         this.password = password;
         this.email = email;
