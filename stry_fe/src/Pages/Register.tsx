@@ -23,9 +23,6 @@ export default function Register(props: any) {
     e.preventDefault();
     navigate("/");
   };
-  const handleCheckButton = () => {
-    setTerms(!terms);
-  };
   const handleChange = (e: any) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
@@ -35,8 +32,7 @@ export default function Register(props: any) {
       data.email.length >= 3 &&
       data.password.length >= 3 &&
       data.username.length >= 2 &&
-      data.password === data.confirmPassword &&
-      terms === true
+      data.password === data.confirmPassword
     ) {
       setSubmitDisabled(false);
     } else {
@@ -48,11 +44,10 @@ export default function Register(props: any) {
     e.preventDefault();
     const sendData = {
       username: data.username,
+      password: data.password,
       email: data.email,
       firstName: data.firstName,
-      lastName: data.lastName,
-      password: data.password,
-      photo: fileDataURL,
+      lastName: data.lastName
     };
 
     axios
