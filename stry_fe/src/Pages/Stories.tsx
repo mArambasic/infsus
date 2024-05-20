@@ -23,7 +23,7 @@ export default function Stories() {
   }, [listOfStories]);
 
 
-  const onStoryClick = (storyId: string) => {
+  const onStoryClick = (storyId: number) => {
     console.log("Story ID", storyId)
     window.sessionStorage.setItem("StoryId", storyId);
     navigate("/storyDetails");

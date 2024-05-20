@@ -15,7 +15,7 @@ export default function StoryDetails(){
 
         cards = FetchCard();
         console.log("Karte", cards);
-        const result = cards.filter((item)=>item.name===window.sessionStorage.getItem("CardName"))
+        const result = cards.filter((item)=>item.storyId===window.sessionStorage.getItem("StoryId"))
         console.log("Nakon ", result);
 
 
@@ -30,7 +30,7 @@ export default function StoryDetails(){
             <div className='details-border'>
             {result[0]?
             <div>
-                <label>Name : </label><b>{result[0].name.toLocaleUpperCase()}</b> <br />
+                <label>Name : </label><b>{result[0].storyId.toLocaleUpperCase()}</b> <br />
                 <label>Description : </label><span>{result[0].description}</span> <br />
                 <Image src={result[0].photo} /> <br />
             </div>:null
@@ -57,6 +57,7 @@ function FetchCard (){
       lon: number;
       description: string;
       photo : string;
+      storyId: number;
     }[]
   >([]);
   
