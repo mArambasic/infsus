@@ -13,6 +13,6 @@ import java.util.UUID;
 @Repository
 public interface StoryRepository extends JpaRepository<Story, UUID> {
 
-    @Query(value = "SELECT * FROM Story", nativeQuery = true)
+    @Query(value = "SELECT * FROM story", nativeQuery = true)
     List<Story> getAllStories();
 }

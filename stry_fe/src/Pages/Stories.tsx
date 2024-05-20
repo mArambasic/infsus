@@ -49,7 +49,7 @@ function useFetchStories() {
 
     const fetchData = async () => {
       try {
-        const res = await axios.post('https://infsus-fe.onrender.com/api/v1/getStories');
+        const res = await axios.post('https://infsus-fe.onrender.com/api/v1/getAllStories');
         if (res.status === 200) {
           const list = res.data;
           const stories: Story[] = list.map((story: any) => ({
