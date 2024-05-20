@@ -15,7 +15,9 @@ export default function StoryDetails(){
 
         cards = FetchCard();
         console.log("Karte", cards);
-        const result = cards.filter((item)=>item.storyId===window.sessionStorage.getItem("StoryId"))
+        const result = cards
+        
+        // .filter((item)=>item.storyId===window.sessionStorage.getItem("StoryId"))
         console.log("Nakon ", result);
 
 
@@ -57,7 +59,6 @@ function FetchCard (){
       lon: number;
       description: string;
       photo : string;
-      storyId: string;
     }[]
   >([]);
   
