@@ -5,9 +5,6 @@ import NavBar from "../Components/NavBar";
 import { UserContext } from "../Helper/Context";
 import Login from "./Login";
 
-
-const navigate = useNavigate();
-
 interface Story {
   storyId: number;
   title: string;
@@ -24,6 +21,13 @@ export default function Stories() {
   useEffect(() => {
     setStories(listOfStories);
   }, [listOfStories]);
+
+
+  const onStoryClick = (storyId: string) => {
+    console.log("Story ID", storyId)
+    window.sessionStorage.setItem("StoryId", storyId);
+    navigate("/storyDetails");
+  };
 
   return (
     <>
@@ -76,10 +80,3 @@ function useFetchStories() {
 
   return { listOfStories };
 }
-
-
-const onStoryClick = (storyId: string) => {
-  console.log("Story ID", storyId)
-  window.sessionStorage.setItem("StoryId", storyId);
-  navigate("/storyDetails");
-};
