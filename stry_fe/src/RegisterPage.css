@@ -1,0 +1,33 @@
+#RegisterContainer, .logoWrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+#FormRegister {
+    width: 100%;
+
+}
+form {
+    margin: auto;
+    width:80%;
+    max-width: 50vw;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.formRow {
+    margin: 3px 0;
+}
+.formRow input{
+    padding: 6px;
+}
+.col25 {
+    float: left;
+    width: 25%;
+}
+
+.col75{
+    float:left;
+    width: 75%;
+}
