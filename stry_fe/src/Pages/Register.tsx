@@ -13,6 +13,8 @@ export default function Register(props: any) {
     email: "",
     password: "",
     confirmPassword: "",
+    firstName: "",
+    lastName: "",
   });
   const [file, setFile] = useState(null);
   const [fileDataURL, setFileDataURL] = useState(null);
