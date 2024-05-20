@@ -1,7 +1,7 @@
 package stry.api;
 
 import stry.POJOs.*;
-import stry.model.Korisnik;
+import stry.model.User;
 import stry.service.BorbaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +25,7 @@ public class BorbaController {
     }
 
     @PostMapping("/api/v1/allBattles")
-    public List<BorbaPOJO> allBattles(@RequestBody Korisnik k) {
+    public List<BorbaPOJO> allBattles(@RequestBody User k) {
         System.out.println("User koji zeli vidjeti vlastite borbe = " + k.getUsername());
         return borbaService.allBattles(k.getUsername());
     }

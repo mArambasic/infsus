@@ -1,6 +1,6 @@
 package stry.registration;
 
-import stry.model.Korisnik;
+import stry.model.User;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -19,9 +19,9 @@ public class VerificationToken {
     @Column(name = "token")
     private String token;
 
-    @OneToOne(targetEntity = Korisnik.class, fetch = FetchType.EAGER)
+    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
     @JoinColumn(nullable = false, name = "username")
-    private Korisnik korisnik;
+    private User user;
     @Column(name = "expiry_date")
     private Date expiryDate;
 
@@ -35,10 +35,10 @@ public class VerificationToken {
         return new Date(cal.getTime().getTime());
     }
 
-    public VerificationToken(Long id, String token, Korisnik korisnik, Date expiryDate) {
+    public VerificationToken(Long id, String token, User user, Date expiryDate) {
         this.id = id;
         this.token = token;
-        this.korisnik = korisnik;
+        this.user = user;
         this.expiryDate = expiryDate;
     }
 
@@ -50,8 +50,8 @@ public class VerificationToken {
         return token;
     }
 
-    public Korisnik getKorisnik() {
-        return korisnik;
+    public User getKorisnik() {
+        return user;
     }
 
     public Date getExpiryDate() {
@@ -66,8 +66,8 @@ public class VerificationToken {
         this.token = token;
     }
 
-    public void setKorisnik(Korisnik korisnik) {
-        this.korisnik = korisnik;
+    public void setKorisnik(User user) {
+        this.user = user;
     }
 
     public void setExpiryDate(Date expiryDate) {

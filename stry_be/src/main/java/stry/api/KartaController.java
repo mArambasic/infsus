@@ -2,7 +2,7 @@ package stry.api;
 
 import stry.POJOs.CollectCardPOJO;
 import stry.model.Karta;
-import stry.model.Korisnik;
+import stry.model.User;
 import stry.service.IKartaService;
 import stry.service.KartaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +20,8 @@ public class KartaController {
     public KartaController(KartaService kartaService) {this.kartaService = kartaService;}
 
     @PostMapping("api/v1/getUserCards")
-    public List<Karta> getUserCards(@RequestBody Korisnik korisnik) {
-        return kartaService.findByUsername(korisnik.getUsername());
+    public List<Karta> getUserCards(@RequestBody User user) {
+        return kartaService.findByUsername(user.getUsername());
     }
 
     @PostMapping("api/v1/collectCard")

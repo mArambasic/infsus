@@ -1,7 +1,7 @@
 package stry.api;
 
 import stry.POJOs.PlayersLastBattlesPOJO;
-import stry.model.Korisnik;
+import stry.model.User;
 import stry.service.StatsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Pair;
@@ -27,7 +27,7 @@ public class StatsController {
     }
 
     @PostMapping("/api/v1/postPlayersLastBattles")
-    public PlayersLastBattlesPOJO postPlayersLastBattles(@RequestBody Korisnik korisnik) throws IOException {
-        return statsService.postPlayersLastBattles(korisnik.getUsername());
+    public PlayersLastBattlesPOJO postPlayersLastBattles(@RequestBody User user) throws IOException {
+        return statsService.postPlayersLastBattles(user.getUsername());
     }
 }

@@ -1,6 +1,6 @@
 package stry.repository;
 
-import stry.model.Korisnik;
+import stry.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -11,10 +11,10 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Repository
-public interface AdminRepository extends JpaRepository<Korisnik, String> {
+public interface AdminRepository extends JpaRepository<User, String> {
 
     @Query(value = "SELECT * FROM korisnik ORDER BY rating DESC", nativeQuery = true)
-    List<Korisnik> getAllPlayers();
+    List<User> getAllPlayers();
 
     @Transactional
     @Modifying
@@ -27,7 +27,7 @@ public interface AdminRepository extends JpaRepository<Korisnik, String> {
     void updatePlayers(@Param("username") String username, @Param("banned") boolean banned);
 
     @Query(value = "SELECT * FROM korisnik WHERE iban IS NOT NULL AND role = 'Player'", nativeQuery = true)
-    List<Korisnik> getAllUnconfirmedCartographers();
+    List<User> getAllUnconfirmedCartographers();
 
     @Transactional
     @Modifying

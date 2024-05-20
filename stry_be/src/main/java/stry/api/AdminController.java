@@ -1,6 +1,6 @@
 package stry.api;
 
-import stry.model.Korisnik;
+import stry.model.User;
 import stry.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,9 +20,9 @@ public class AdminController {
     }
 
     @GetMapping("/api/v1/adminControlPlayers")
-    public List<Korisnik> adminControlPlayers() throws IOException {
-        List<Korisnik> korisnici = adminService.getAllPlayers();
-        for (Korisnik k : korisnici) {
+    public List<User> adminControlPlayers() throws IOException {
+        List<User> korisnici = adminService.getAllPlayers();
+        for (User k : korisnici) {
             /*byte[] image = Files.readAllBytes(Path.of(k.getPhoto()));
             String encodedImage = "data:image/;base64," + Base64.getEncoder().encodeToString(image);
             k.setPhoto(encodedImage);*/
@@ -31,22 +31,15 @@ public class AdminController {
     }
 
     @PostMapping("/api/v1/deletePlayers")
-    public void deletePlayers(@RequestBody Korisnik k) {
+    public void deletePlayers(@RequestBody User k) {
         adminService.deletePlayers(k.getUsername());
     }
 
-    @PostMapping("/api/v1/updatePlayers")
-    public void updatePlayers(@RequestBody Korisnik k) {
-        System.out.println(k);
-        System.out.println(k.getUsername());
-        System.out.println(k.isBanned());
-        adminService.updatePlayers(k.getUsername(), k.isBanned());
-    }
 
     @GetMapping("/api/v1/getAllCartographers") // nepotvrdeni kartografi
-    public List<Korisnik> getAllUnconfirmedCartographers() throws IOException {
-        List<Korisnik> kartografi = adminService.getAllUnconfirmedCartographers();
-        for(Korisnik k: kartografi) {
+    public List<User> getAllUnconfirmedCartographers() throws IOException {
+        List<User> kartografi = adminService.getAllUnconfirmedCartographers();
+        for(User k: kartografi) {
             /*byte[] image = Files.readAllBytes(Path.of(k.getPhoto())),
                 idImage = Files.readAllBytes(Path.of(k.getIdPhoto()));
             String encodedImage = "data:image/;base64," + Base64.getEncoder().encodeToString(image);
@@ -59,8 +52,8 @@ public class AdminController {
     }
 
     @PostMapping("/api/v1/confirmKartograf")
-    public void confirmKartograf(@RequestBody Korisnik korisnik) {
-        adminService.confirmKartograf(korisnik.getUsername());
+    public void confirmKartograf(@RequestBody User user) {
+        adminService.confirmKartograf(user.getUsername());
     }
 
 }

@@ -9,5 +9,4 @@ import java.util.List;
 public interface IStatsService {
     List<Pair<String, Integer>> getGlobalRanking();
 
-    PlayersLastBattlesPOJO postPlayersLastBattles(String username) throws IOException;
 }
