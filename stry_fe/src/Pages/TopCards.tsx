@@ -32,7 +32,7 @@ const handleGetCards = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     axios
-      .get('https://stry.onrender.com/api/v1/getAllLocations')
+      .get('https://infsus-fe.onrender.com/api/v1/getAllLocations')
       .then((res) => {
         list = res.data;
         setListOfCards([]);

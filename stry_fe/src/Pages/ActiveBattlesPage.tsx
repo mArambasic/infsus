@@ -86,7 +86,7 @@ export default function ActiveBattlesPage()
         }
         let helper :any;
 
-        axios.post(`https://stry.onrender.com/api/v1/getBattleResult`, sendOnServer).then(
+        axios.post(`https://infsus-fe.onrender.com/api/v1/getBattleResult`, sendOnServer).then(
             (res)=>
             {
                 if(res.status==200)
@@ -221,7 +221,7 @@ function useFetchBattles( username : string)
 
     useEffect(()=>{
 
-        axios.post(`https://stry.onrender.com/api/v1/allBattles`, sendData).then(res=>
+        axios.post(`https://infsus-fe.onrender.com/api/v1/allBattles`, sendData).then(res=>
         {
             if(res.status==200 && upis)
             {

@@ -29,7 +29,7 @@ export default function Login() {
     }
 
     axios
-      .post('https://stry.onrender.com/api/v1/allUsers', userData)
+      .post('https://infsus-fe.onrender.com/api/v1/allUsers', userData)
       .then((res) => {
         if (res.status == 200) {
           login(userData.username, userData.password);

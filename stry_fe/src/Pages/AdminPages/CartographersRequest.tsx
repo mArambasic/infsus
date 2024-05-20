@@ -26,7 +26,7 @@ export default function CartographersRequest()
             username:listOfCartographers[index].username
         }
 
-        axios.post('https://stry.onrender.com/api/v1/confirmKartograf', sendData)
+        axios.post('https://infsus-fe.onrender.com/api/v1/confirmKartograf', sendData)
         .then((res) => {
                 if(res.status==200)
                 console.log("Uspjeh=>", res.data);
@@ -95,7 +95,7 @@ function useFetchCartographers(){
     useEffect(()=>
     {
        axios
-          .get('https://stry.onrender.com/api/v1/getAllCartographers') 
+          .get('https://infsus-fe.onrender.com/api/v1/getAllCartographers') 
           .then((res) => {
             list = res.data;
             console.log(list);

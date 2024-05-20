@@ -100,7 +100,7 @@ export default function LocationRequests()
               }
         );
 
-        axios.post('https://stry.onrender.com/api/v1/locationControl', dataOnServer) //locationControl
+        axios.post('https://infsus-fe.onrender.com/api/v1/locationControl', dataOnServer) //locationControl
                     .then((res) => {
                         if (res.status == 200) {
                           console.log("Uspjeh> " + res + " ==>" + res.data);
@@ -139,7 +139,7 @@ export default function LocationRequests()
         );
            
 
-        axios.post('https://stry.onrender.com/api/v1/locationControl', dataOnServer) //locationControl
+        axios.post('https://infsus-fe.onrender.com/api/v1/locationControl', dataOnServer) //locationControl
                     .then((res) => {
                         if (res.status == 200) {
                           console.log("Uspjeh> " + res + " ==>" + res.data);
@@ -222,7 +222,7 @@ export default function LocationRequests()
                         flagged: item.flagged,
                     }
                     console.log("UPIS U BAZU =>", list);
-                    axios.post('https://stry.onrender.com/api/v1/changeLocation', list)
+                    axios.post('https://infsus-fe.onrender.com/api/v1/changeLocation', list)
                     .then((res) => {
                         if (res.status == 200) {
                           console.log("Uspjeh> " + res + " ==>" + res.data);
@@ -406,7 +406,7 @@ function useFetchLocations(){
     {
         
         axios
-          .get('https://stry.onrender.com/api/v1/getAllSuggestedLocations') // getSuggestedLocations
+          .get('https://infsus-fe.onrender.com/api/v1/getAllSuggestedLocations') // getSuggestedLocations
           .then((res) => {
             list = res.data;
             setListOfCards([]);

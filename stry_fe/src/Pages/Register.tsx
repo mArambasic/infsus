@@ -2,7 +2,7 @@ import {Link, useNavigate,} from "react-router-dom";
 import React, { useState, useEffect} from "react";
 import axios from "axios";
 
-const API_URL = `https://stry.onrender.com/api/v1/addNewPlayer`;
+const API_URL = `https://infsus-fe.onrender.com/api/v1/addNewPlayer`;
 
 
 export default function Register(props: any) {
@@ -72,7 +72,7 @@ export default function Register(props: any) {
     };
 
     axios
-      .post('https://stry.onrender.com/api/v1/addNewPlayer', sendData)
+      .post('https://infsus-fe.onrender.com/api/v1/addNewPlayer', sendData)
       .then((res) => {
         if (res.status == 200) {
           console.log("Ispis> " + res + " ==>" + res.data);

@@ -40,7 +40,7 @@ export default function Profile() {
     console.log("Ovo saljem na bazu =>", user);
 /*
     axios
-      .post('https://stry.onrender.com/api/v1/profileImage', user)
+      .post('https://infsus-fe.onrender.com/api/v1/profileImage', user)
       .then((res) => {
         if (res.status === 200) {
           setFileDataURL(res.data);
@@ -73,7 +73,7 @@ export default function Profile() {
         // photo: fileDataURL,
       };
       axios
-        .post('https://stry.onrender.com/api/v1/profileChangeSaved', userData)
+        .post('https://infsus-fe.onrender.com/api/v1/profileChangeSaved', userData)
         .then((res) => {
           if (res.status === 200) {
             console.log("Ispis> " + res + " ==>" + res.data);

@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const API_URL = `https://stry.onrender.com/api/v1/addNewCartographer`;
+const API_URL = `https://infsus-fe.onrender.com/api/v1/addNewCartographer`;
 
 export default function RegisterK(props: any) {
 

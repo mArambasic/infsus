@@ -36,7 +36,7 @@ export default function PlayersForDuel()
       username2 : listOfOnlinePlayers[index].username,
     }
     console.log("Saljem na bazu", sendData);
-    axios.post(`https://stry.onrender.com/api/v1/startBattle`, sendData).then(res=>{
+    axios.post(`https://infsus-fe.onrender.com/api/v1/startBattle`, sendData).then(res=>{
       if(res.status=200)
       {
         console.log("Uspijesno upisano u bazu");
@@ -107,7 +107,7 @@ function useFetchPlayers()
 
     useEffect(
       ()=>{
-        axios.get('https://stry.onrender.com/api/v1/ranking').then((res) => { // post, saljemo kordinate playera
+        axios.get('https://infsus-fe.onrender.com/api/v1/ranking').then((res) => { // post, saljemo kordinate playera
           setPlayers([]);
             for (let i = 0; i < res.data.length; i++) {
             setPlayers((prevPlayers) => [

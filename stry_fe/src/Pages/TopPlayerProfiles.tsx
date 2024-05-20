@@ -22,7 +22,7 @@ export default function TopPlayerProfiles() {
     e.preventDefault();
     console.log(players);
 
-    axios.get('https://stry.onrender.com/api/v1/ranking').then((res) => {
+    axios.get('https://infsus-fe.onrender.com/api/v1/ranking').then((res) => {
       setPlayers([]);
       for (let i = 0; i < res.data.length; i++) {
         setPlayers((prevPlayers) => [

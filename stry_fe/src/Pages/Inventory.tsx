@@ -123,7 +123,7 @@ function useFetchCard(user: string) {
         try {
           // Fetch data for user cards
           const res = await axios.post(
-            'https://stry.onrender.com/api/v1/getUserCards',
+            'https://infsus-fe.onrender.com/api/v1/getUserCards',
             sendUsername
           );
           if (res.status === 200) {
@@ -155,7 +155,7 @@ function useFetchCard(user: string) {
 
 
               const locationRes = await axios.post(
-                'https://stry.onrender.com/api/v1/getLocationById',
+                'https://infsus-fe.onrender.com/api/v1/getLocationById',
                 locationId
               );
               const location = locationRes.data;

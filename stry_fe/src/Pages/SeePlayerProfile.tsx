@@ -35,7 +35,7 @@ export default function SeePlayerProfile(){
 
     useEffect(()=>{
         axios
-            .post('https://stry.onrender.com/api/v1/getOtherProfile',plName)
+            .post('https://infsus-fe.onrender.com/api/v1/getOtherProfile',plName)
             .then(res=>{
                 if (res.status!=200) console.log("greska"+res.status);
                 

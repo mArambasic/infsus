@@ -67,7 +67,7 @@ export default function EditPlayers(){
             let sendData ={
                 username: item.username
             }
-            axios.post('https://stry.onrender.com/api/v1/deletePlayers', sendData).
+            axios.post('https://infsus-fe.onrender.com/api/v1/deletePlayers', sendData).
             then((res) => {
                 if (res.status === 200) {
                     console.log("Uspjeh, podaci upisani");
@@ -87,7 +87,7 @@ export default function EditPlayers(){
                 banned : item.banned
             }
 
-            axios.post('https://stry.onrender.com/api/v1/updatePlayers', sendData).
+            axios.post('https://infsus-fe.onrender.com/api/v1/updatePlayers', sendData).
             then((res) => {
                 if (res.status === 200) {
                     console.log("Uspjeh, podaci upisani");
@@ -183,7 +183,7 @@ function useFetchPlayers()
 
     useEffect(
       ()=>{
-        axios.get('https://stry.onrender.com/api/v1/adminControlPlayers').then((res) => { // post, saljemo kordinate playera // adminControlPlayers
+        axios.get('https://infsus-fe.onrender.com/api/v1/adminControlPlayers').then((res) => { // post, saljemo kordinate playera // adminControlPlayers
           setPlayers([]);
             for (let i = 0; i < res.data.length; i++) {
             setPlayers((prevPlayers) => [

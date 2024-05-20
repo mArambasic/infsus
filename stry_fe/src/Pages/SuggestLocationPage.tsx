@@ -68,7 +68,7 @@ export default function SuggestLocationPage() {
     }
 
     axios
-      .post('https://stry.onrender.com/api/v1/addNewLocation', locationCard)
+      .post('https://infsus-fe.onrender.com/api/v1/addNewLocation', locationCard)
       .then((res) => {
         if (res.status == 200) {
           console.log("Uspijeh> " + res + " ==>" + res.data);

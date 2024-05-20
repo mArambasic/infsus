@@ -71,7 +71,7 @@ export default function Map() {
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     axios
-      .get(`https://stry.onrender.com/api/v1/getAllLocations`)
+      .get(`https://infsus-fe.onrender.com/api/v1/getAllLocations`)
       .then((res) => {
         list = res.data;
         setListOfCards([]);
@@ -189,7 +189,7 @@ export default function Map() {
       };
 
       axios
-        .post(`https://stry.onrender.com/api/v1/addNewLocation`, locationCard)
+        .post(`https://infsus-fe.onrender.com/api/v1/addNewLocation`, locationCard)
         .then((res) => {
           if (res.status == 200) {
             console.log("Uspjeh> " + res + " ==>" + res.data);
@@ -271,7 +271,7 @@ export default function Map() {
         locationId : listOfCards[index].id
       }
       console.log("UPIS U BAZU pick cards", sendData );
-      axios.post(`https://stry.onrender.com/api/v1/collectCard`, sendData).
+      axios.post(`https://infsus-fe.onrender.com/api/v1/collectCard`, sendData).
       then((res) => {
         if (res.status == 200) {
           console.log("Uspjeh ==>", res.data);
