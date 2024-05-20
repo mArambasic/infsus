@@ -38,7 +38,7 @@ function App() {
               <Route path="/SuggestLocationPage" element={<SuggestLocationPage/>}></Route>
               <Route path="/verify" element={<Verify/>}></Route>
               <Route path="/playersForDuel" element={<PlayersForDuel/>}></Route>
-              <Route path="/story" element={<Stories/>}></Route>
+              <Route path="/stories" element={<Stories/>}></Route>
               <Route path="/cardDetails" element={<CardDetails/>}></Route>
               <Route path="/SeePlayerProfile" element={<SeePlayerProfile/>}></Route>
               <Route path="/SettingCardsPage" element={<SettingCardsPage/>}></Route>
