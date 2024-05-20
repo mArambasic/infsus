@@ -3,7 +3,7 @@ package stry.service;
 import stry.POJOs.CardPOJO;
 import stry.POJOs.FullPlayerProfilePOJO;
 import stry.model.Karta;
-import stry.model.User;
+import stry.model.Korisnik;
 import stry.model.Lokacija;
 import stry.repository.KartaRepository;
 import stry.repository.UserRepository;
@@ -38,10 +38,10 @@ public class UserService implements IUserService {
         this.locationRepository = locationRepository;
     }
 
-    private List<User> findByEmail(String email) {
-        List<User> allUsers = findAll();
-        List<User> retVal = new ArrayList<>();
-        for (User k : allUsers) {
+    private List<Korisnik> findByEmail(String email) {
+        List<Korisnik> allUsers = findAll();
+        List<Korisnik> retVal = new ArrayList<>();
+        for (Korisnik k : allUsers) {
             if (email.contentEquals(k.getEmail())) {
                 retVal.add(k);
             }
@@ -51,18 +51,18 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public Optional<User> findByUsername(String username) {
+    public Optional<Korisnik> findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
 
 
     @Override
-    public List<User> findAll() {
+    public List<Korisnik> findAll() {
         return userRepository.findAll();
     }
 
     @Override
-    public User addNewUser(User user, String siteURL) throws MessagingException, UnsupportedEncodingException {
+    public Korisnik addNewUser(Korisnik user, String siteURL) throws MessagingException, UnsupportedEncodingException {
         if (userRepository.findById(user.getUsername()).isEmpty() &&
                 findByEmail(user.getEmail()).size() == 0) {
 
@@ -76,7 +76,7 @@ public class UserService implements IUserService {
 
     @Override
     public String checkCredentials(String username, String password) {
-        Optional<User> k = findByUsername(username);
+        Optional<Korisnik> k = findByUsername(username);
         if(!k.isEmpty()) {
             String passwordKorisnik = k.get().getPassword();
 
@@ -88,7 +88,7 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public void saveChanges(User user) {
+    public void saveChanges(Korisnik user) {
         userRepository.save(user);
     }
 
@@ -99,10 +99,10 @@ public class UserService implements IUserService {
         profile.setUsername(username);
 
         // settanje ratinga
-        Optional<User> k = findByUsername(username);
+        Optional<Korisnik> k = findByUsername(username);
         if(k.isEmpty()) return profile;
 
-        User user = k.get();
+        Korisnik user = k.get();
 
         // settanje slike rijeseno u controlleru jer se tamo vec nalazi gotova funkcija
 

@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "User")
-public class User {
+@Table(name = "Korisnik")
+public class Korisnik {
     @Id
     @NonNull
     @Column(name = "username")
@@ -29,11 +29,11 @@ public class User {
     @Column(name = "role")
     private String role;
 
-    public User() {
+    public Korisnik() {
     }
 
 
-    public User(
+    public Korisnik(
             @NonNull String username,
             @NonNull String password,
             @NonNull String email,

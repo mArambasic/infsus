@@ -1,9 +1,6 @@
 package stry.service;
 
-import stry.POJOs.FinishedBattlePOJO;
-import stry.POJOs.PlayersLastBattlesPOJO;
-import stry.model.Borba;
-import stry.model.User;
+import stry.model.Korisnik;
 import stry.repository.BorbaRepository;
 import stry.repository.UserRepository;
 import stry.repository.StatsRepository;
@@ -11,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,8 +31,8 @@ public class StatsService implements IStatsService {
     @Override
     public List<Pair<String, Integer>> getGlobalRanking() {
         List<Pair<String, Integer>> playerRatings = new ArrayList<>();
-        List<User> allUsers = statsRepository.getAllByRating();
-        for (User k : allUsers) {
+        List<Korisnik> allUsers = statsRepository.getAllByRating();
+        for (Korisnik k : allUsers) {
             Pair<String, Integer> par;
 //            par = Pair.of(k.getUsername(), k.getRating());
 //            playerRatings.add(par);

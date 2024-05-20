@@ -1,16 +1,16 @@
 package stry.service;
 
-import stry.model.User;
+import stry.model.Korisnik;
 
 import java.util.List;
 
 public interface IAdminService {
 
-    List<User> getAllPlayers();
+    List<Korisnik> getAllPlayers();
 
     void deletePlayers(String username);
 
-    List<User> getAllUnconfirmedCartographers();
+    List<Korisnik> getAllUnconfirmedCartographers();
 
     void confirmKartograf(String username);
 

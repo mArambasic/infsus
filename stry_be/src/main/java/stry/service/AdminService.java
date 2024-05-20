@@ -1,6 +1,6 @@
 package stry.service;
 
-import stry.model.User;
+import stry.model.Korisnik;
 import stry.repository.AdminRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,10 +21,10 @@ public class AdminService implements IAdminService {
     }
 
     @Override
-    public List<User> getAllPlayers() {
-        List<User> allPlayers = adminRepository.getAllPlayers();
-        List<User> retVal = new ArrayList<>();
-        for (User k : allPlayers) {
+    public List<Korisnik> getAllPlayers() {
+        List<Korisnik> allPlayers = adminRepository.getAllPlayers();
+        List<Korisnik> retVal = new ArrayList<>();
+        for (Korisnik k : allPlayers) {
             if (!k.getRole().equals("Admin"))
                 retVal.add(k);
         }
@@ -38,7 +38,7 @@ public class AdminService implements IAdminService {
 
 
     @Override
-    public List<User> getAllUnconfirmedCartographers() {
+    public List<Korisnik> getAllUnconfirmedCartographers() {
         return adminRepository.getAllUnconfirmedCartographers();
     }
 
