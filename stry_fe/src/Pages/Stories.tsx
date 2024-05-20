@@ -24,8 +24,9 @@ export default function Stories() {
 
 
   const onStoryClick = (storyId: number) => {
-    console.log("Story ID", storyId)
-    window.sessionStorage.setItem("StoryId", storyId);
+    const id = storyId.toString()
+    console.log("Story ID", id)
+    window.sessionStorage.setItem("StoryId", id);
     navigate("/storyDetails");
   };
 

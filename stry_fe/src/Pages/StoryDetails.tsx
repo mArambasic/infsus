@@ -57,7 +57,7 @@ function FetchCard (){
       lon: number;
       description: string;
       photo : string;
-      storyId: number;
+      storyId: string;
     }[]
   >([]);
   
