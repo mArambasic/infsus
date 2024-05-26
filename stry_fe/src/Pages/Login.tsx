@@ -4,7 +4,6 @@ import axios from "axios";
 import { UserContext } from "../Helper/Context";
 
 
-
 export default function Login() {
   const navigate = useNavigate();
 
@@ -14,8 +13,7 @@ export default function Login() {
     password: "",
   });
 
-//==========================================================================================FUNKCIJE==============================================================================
-  const handleChange = (e: any) => {
+ const handleChange = (e: any) => {
     setData({ ...data, [e.target.name]: e.target.value });
   }
 
@@ -29,7 +27,7 @@ export default function Login() {
     }
 
     axios
-      .post('https://infsus-fe.onrender.com/api/v1/allUsers', userData)
+      .post('http://localhost:8080/api/v1/allUsers', userData)
       .then((res) => {
         if (res.status == 200) {
           login(userData.username, userData.password);
@@ -47,9 +45,7 @@ export default function Login() {
       });
   }
 
-
- //==========================================================================================FUNKCIJE END==============================================================================
-  return (
+ return (
     <div>
       <form className="login-form-container" onSubmit={handleSubmit}>
         <span className="form-title">Login</span>
@@ -81,6 +77,12 @@ export default function Login() {
           <Link className="registerText" to="/Register">
             {" "}
             Register!{" "}
+          </Link>{" "}
+        </div>
+        <div>
+          <Link className="continueText" to="/Home">
+          {" "}
+          Continue as guest{" "}
           </Link>{" "}
         </div>
       </form>

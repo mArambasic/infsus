@@ -9,8 +9,6 @@ export const UserProvider = ({ children }: any) => {
     auth: false,
   });
 
-//==========================================================================================FUNKCIJE==============================================================================
-  // Login updates the user data with a name parameter
   const login = (name: string, password: string) => {
     setUser((user) => ({
       username: name,
@@ -19,7 +17,6 @@ export const UserProvider = ({ children }: any) => {
     }));
   }
 
-  // Logout updates the user data to default
   const logout = () => {
     setUser((user) => ({
       username: "",
@@ -27,8 +24,7 @@ export const UserProvider = ({ children }: any) => {
       auth: false,
     }));
   }
-//==========================================================================================FUNKCIJE END==============================================================================
-  return (
+ return (
     <UserContext.Provider value={{ user, login, logout }}>
       {children}
     </UserContext.Provider>

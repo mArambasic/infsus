@@ -1,16 +1,14 @@
 import React, { useContext } from "react";
 import { UserContext } from "../Helper/Context";
 import { useNavigate } from "react-router-dom";
-import { divIcon } from "leaflet";
 
 export default function NavBar() {
 
   const { logout } = useContext(UserContext);
   const navigate = useNavigate();
-  const role = window.sessionStorage.getItem("Role");
+  const { user } = useContext(UserContext);
 
-//==========================================================================================FUNKCIJE==============================================================================
-  const loggingOut = () => {
+const loggingOut = () => {
     window.sessionStorage.removeItem("loggedIn");
     window.sessionStorage.removeItem("Username");
     window.sessionStorage.removeItem("Password");
@@ -18,8 +16,6 @@ export default function NavBar() {
     logout();
     navigate("/");
   }
-//==========================================================================================FUNKCIJE END==============================================================================
-
   return (
     <>
     
@@ -27,11 +23,21 @@ export default function NavBar() {
 
       <div id="navbarNav" className="navbar">
 
-        <div className="navbar-left">
-          <div className="navbar-items-left" >
-              <button onClick={()=>navigate("/stories")} style={{padding:"1rem",border:"0", borderRadius:"25%",fontWeight:"800", backgroundColor:"lightcyan", cursor:"pointer"}}>Stories</button>
+        {user.username && (
+          <div className="navbar-left">
+            <div className="navbar-items-left" >
+                <button onClick={()=>navigate("/userStories")} style={{padding:"1rem",border:"0", borderRadius:"25%",fontWeight:"800", backgroundColor:"lightcyan", cursor:"pointer"}}>My stories</button>
+            </div>
           </div>
-        </div>
+        ) }
+
+        {user.username && (
+          <div className="navbar-left">
+            <div className="navbar-items-left" >
+                <button onClick={()=>navigate("/createStory")} style={{padding:"1rem",border:"0", borderRadius:"25%",fontWeight:"800", backgroundColor:"lightcyan", cursor:"pointer"}}>Create story</button>
+            </div>
+          </div>
+        ) }
 
         <div className="navbar-center">
           <div className="navbar-items-center" onClick={()=>navigate("/Home")}>
@@ -43,45 +49,39 @@ export default function NavBar() {
         </div>
 
         <div className="navbar-right">
-          
-        {role=="Admin"? 
-          <div className="navbar-items-right">
-            <button onClick={()=>navigate("/EditPlayers")} style={{padding:"1rem",border:"0", borderRadius:"25%",fontWeight:"800", backgroundColor:"lightcyan", cursor:"pointer"}}>Players control</button>
-          </div> 
-          : null}
+          {user.username && (
+            <div className="navbar-items-right">
+              <button onClick={()=>navigate("/favoriteStories")} style={{padding:"1rem",border:"0", borderRadius:"25%",fontWeight:"800", backgroundColor:"lightcyan", cursor:"pointer"}}> 
+              Favorite Stories
+              </button>
+            </div>
+                    ) }
 
-          {role=="Admin"? 
-          <div className="navbar-items-right">
-            <button onClick={()=>navigate("/CartographersRequest")} style={{padding:"1rem",border:"0", borderRadius:"25%",fontWeight:"800", backgroundColor:"lightcyan", cursor:"pointer"}}>Cartographers requests</button>
-          </div> 
-          : null}
-          
-          {role=="Cartographer" || role=="Admin"? 
-          <div className="navbar-items-right">
-            <button onClick={()=>navigate("/LocationRequests")} style={{padding:"1rem",border:"0", borderRadius:"25%",fontWeight:"800", backgroundColor:"lightcyan", cursor:"pointer"}}> 
-              Locations requests 
-            </button>
-          </div> 
-          : null}
-
-          <div className="navbar-items-right">
-            <button onClick={()=>navigate("/infoProfile")} style={{padding:"1rem",border:"0", borderRadius:"25%",fontWeight:"800", backgroundColor:"lightcyan", cursor:"pointer"}}> 
-              Profile
-            </button>
-          </div>
-
+          {user.username && (     
           <div className="navbar-items-right">
             <button onClick={()=>navigate("/Profile")} style={{padding:"0.5rem", border:"0", borderRadius:"25%", fontWeight:"800", backgroundColor:"lightcyan", cursor:"pointer"}}>
               <img src="./settings.png" alt="Uredi profil" style={{width:"2rem"}}/>
             </button>
           </div>
+           ) }
 
-
+          {user.username && (     
           <div className="navbar-items-right">
             <button onClick={()=>{navigate("/");loggingOut();}} style={{padding:"1rem",border:"0", borderRadius:"25%",fontWeight:"800", backgroundColor:"lightcyan", cursor:"pointer"}}>
               Logout
             </button>
           </div>
+            ) 
+          }
+
+          {!user.username && (    
+          <div className="navbar-items-right">
+            <button onClick={()=>{navigate("/");loggingOut();}} style={{padding:"1rem",border:"0", borderRadius:"25%",fontWeight:"800", backgroundColor:"lightcyan", cursor:"pointer"}}>
+              Login
+            </button>
+          </div>
+            ) 
+          }
         </div>
       </div>
     </nav>

@@ -5,12 +5,10 @@ const path = require("path");
 
 const app = express();
 
-// Configuration
-const { PORT } = process.env;
-const { HOST } = process.env;
-const { API_BASE_URL } = process.env;
+const PORT = 8081;
+const HOST = 'localhost';
+const API_BASE_URL ='http://localhost:8081';
 
-// Proxy
 app.use(
     "/api",
     createProxyMiddleware({

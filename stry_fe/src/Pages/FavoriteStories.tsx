@@ -26,6 +26,45 @@ export default function Home() {
     navigate(`/storyDetails/${id}`);
   };
 
+  function useFetchStories() {
+    const dataFetchedRef = useRef(false);
+    const [listOfStories, setListOfStories] = useState<Story[]>([]);
+
+    useEffect(() => {
+      if (dataFetchedRef.current) return;
+      dataFetchedRef.current = true;
+
+      const fetchData = async () => {
+        const data = {
+          username: user.username,
+        };
+
+        try {
+          const res = await axios.post('http://localhost:8080/api/v1/getFavoriteUserStories', data);
+          if (res.status === 200) {
+            const list = res.data;
+            const stories: Story[] = list.map((story: any) => ({
+              storyId: story.id,
+              title: story.title,
+              score: story.score,
+              date: new Date(story.date),
+              author: story.author,
+            }));
+            setListOfStories(stories);
+          } else {
+            console.log("Error getting stories");
+          }
+        } catch (err) {
+          console.log("Error captured => " + err);
+        }
+      };
+
+      fetchData();
+    }, []);
+
+    return { listOfStories };
+  }
+
   return (
     <>
       <div>
@@ -39,39 +78,4 @@ export default function Home() {
       </div>
     </>
   );
-}
-
-function useFetchStories() {
-  const dataFetchedRef = useRef(false);
-  const [listOfStories, setListOfStories] = useState<Story[]>([]);
-
-  useEffect(() => {
-    if (dataFetchedRef.current) return;
-    dataFetchedRef.current = true;
-
-    const fetchData = async () => {
-      try {
-        const res = await axios.get('http://localhost:8080/api/v1/getAllStories');
-        if (res.status === 200) {
-          const list = res.data;
-          const stories: Story[] = list.map((story: any) => ({
-            storyId: story.id,
-            title: story.title,
-            score: story.score,
-            date: new Date(story.date),
-            author: story.author,
-          }));
-          setListOfStories(stories);
-        } else {
-          console.log("Error getting stories");
-        }
-      } catch (err) {
-        console.log("Error captured => " + err);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  return { listOfStories };
 }
